@@ -1,0 +1,324 @@
+@import "variation";
+
+taro-view-core, view {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, page {
+  font-family: PingFangSC, Helvetica, Avenir, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #666;
+}
+
+.page, .taro_page {
+  height: 100vh;
+  font-size: 28px;
+}
+
+.block-box {
+  margin: $space-margin-top $space-margin-left;
+  padding: $space-padding-top;
+  background: #FFFFFF;
+  box-shadow: 0 0 40px 0 rgba(109, 109, 109, 0.50);
+  border-radius: 30px;
+}
+
+.block-box ~ .block-box {
+  margin-top: 0;
+}
+
+.display-none {
+  display: none !important;
+}
+
+// 字体相关
+.font-large {
+  font-size: 40px;
+}
+
+.font-big {
+  font-size: 32px;
+}
+
+.font-normal {
+  font-size: 28px !important;
+}
+
+.font-small {
+  font-size: 24px !important;
+}
+
+.font-mini {
+  font-size: 20px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+// 定位
+.position-static {
+  position: static;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+// 尺寸
+.half-width {
+  width: 50%;
+}
+
+.full-width {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.full-height {
+  height: 100%;
+  max-height: 100%;
+}
+
+.full-page {
+  width: 100vw;
+  height: 100vh;
+  font-size: 28px;
+}
+
+.full-screen {
+  height: 100vh;
+}
+
+.overflow-auto {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+
+// 文字相关
+.text-ov {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.white-space {
+  white-space: nowrap;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-black {
+  color: #222;
+}
+
+.text-dispersion {
+  line-height: 1.5;
+}
+
+.text-gray {
+  color: #999;
+}
+
+.text-link {
+  color: #3A84FF;
+  cursor: pointer;
+}
+
+.text-focus {
+  color: #ffb848 !important;
+}
+
+.text-green {
+  color: green;
+}
+
+.text-red {
+  color: red;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+@for $i from 1 through 6 {
+  $m: $i*5;
+  $n: $m*2;
+  .m#{$m} {
+    margin: #{$n}px;
+  }
+  .ml#{$m} {
+    margin-left: #{$n}px;
+  }
+  .mr#{$m} {
+    margin-right: #{$n}px;
+  }
+  .mt#{$m} {
+    margin-top: #{$n}px;
+  }
+  .mb#{$m} {
+    margin-bottom: #{$n}px;
+  }
+  .p#{$m} {
+    padding: #{$n}px;
+  }
+  .pl#{$m} {
+    padding-left: #{$n}px;
+  }
+  .pr#{$m} {
+    padding-right: #{$n}px;
+  }
+  .pt#{$m} {
+    padding-top: #{$n}px;
+  }
+  .pb#{$m} {
+    padding-bottom: #{$n}px;
+  }
+}
+
+.bg-blue {
+  background-color: $bg-blue;
+}
+
+.bg-green {
+  background-color: $bg-green;
+}
+
+.bg-purple {
+  background-color: $bg-purple;
+}
+
+.bg-gray {
+  background: $bg-gray;
+}
+
+
+.wx-radio {
+  &-box {
+    width: 100%;
+    display: flex;
+    border: 1px solid #EAEAEA;
+  }
+
+  &-min {
+    height: 60px;
+    line-height: 60px;
+    border-radius: 60px;
+    font-size: 24px;
+    overflow: hidden;
+
+    &-active &.wx-radio-min {
+      border-radius: 60px;
+    }
+  }
+
+  &-item {
+    display: block;
+    text-align: center;
+    flex: 1;
+  }
+
+  &-active {
+    background: #5E9BFF;
+    color: #fff;
+  }
+}
+
+.wx-select {
+  &-box {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    color: #999;
+  }
+
+  &-label {
+    background: #AFCDFF;
+    border-radius: 50px;
+    width: 200px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  &-arrow {
+    padding-right: 24px;
+    color: #bbb;
+  }
+
+  &-item {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 20px;
+  }
+}
+
+.btn-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  //background: #ccc!important;
+  &, .btn-radius {
+    color: #ccc !important;
+  }
+}
+
+.header-main-title {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 30px $space-margin-left 0 $space-margin-left;
+}
+
+.img-fit-box {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+.pop-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: not-allowed;
+  z-index: 99999;
+}
